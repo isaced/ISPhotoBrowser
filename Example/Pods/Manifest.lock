@@ -1,0 +1,16 @@
+PODS:
+  - ISPhotoBrowser (0.1.0)
+
+DEPENDENCIES:
+  - ISPhotoBrowser (from `../`)
+
+EXTERNAL SOURCES:
+  ISPhotoBrowser:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ISPhotoBrowser: a84d022362cd35d9537de0a717d956741c34d41e
+
+PODFILE CHECKSUM: d2e516cf39567c58a705ea16eaef53dd37156c6c
+
+COCOAPODS: 1.2.1

@@ -1,0 +1,22 @@
+{
+  "name": "ISPhotoBrowser",
+  "version": "0.1.0",
+  "summary": "A short description of ISPhotoBrowser.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/isaced@163.com/ISPhotoBrowser",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "isaced@163.com": "isaced@163.com"
+  },
+  "source": {
+    "git": "https://github.com/isaced@163.com/ISPhotoBrowser.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ISPhotoBrowser/Classes/**/*"
+}

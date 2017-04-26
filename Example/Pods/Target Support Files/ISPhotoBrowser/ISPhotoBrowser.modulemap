@@ -1,0 +1,6 @@
+framework module ISPhotoBrowser {
+  umbrella header "ISPhotoBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}
