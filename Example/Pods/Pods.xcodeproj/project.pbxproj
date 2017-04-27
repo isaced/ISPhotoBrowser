@@ -7,69 +7,164 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B30555B1EB05B5400668A57 /* ISPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B30555A1EB05B5400668A57 /* ISPhotoBrowser.swift */; };
-		388A04EF2B153A5A17211D31E5E14EC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		4D77151462DC1A7C3A6A146D6EC27661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		00951FF1D817A0CB4610FFA9FF0CF7F0 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C72AFC42CED429C7A71F7A7704D20C /* ImageCache.swift */; };
+		08CCF228C316947672E143C40BCDA4EB /* ISPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FCB27178D840548B90E198483CFAA /* ISPhotoBrowser.swift */; };
+		0D1C9B2E3D0AC4CC9C05975EC8E97A56 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3C40826560CCA979FBF1A30879C5D /* String+MD5.swift */; };
+		1C4F96E6595364246C4527C4B132729C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCAABA051F2B62FEC94F6629032960D /* Resource.swift */; };
+		2B1790A5E2DAC8793C859A55F27BEDB5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC672E8EA725C5D07B841DD0564BE8A /* Image.swift */; };
+		2D756A5CA7E424FD10FA44853BB47EFC /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DE4AC69094EC3015FFF1BF0AD4AFE7 /* ImageDownloader.swift */; };
+		2EC64C53E8A4EED8CF5313B748BA32EB /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD01AB43E986E7866A6796A5FD49BC /* Notifications.swift */; };
+		32D4FD40292BA24575FE62ED6EAD913D /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6AD548C8531F1E89A4AC6B1C6B3A8 /* Box.swift */; };
+		33531219A890962BFD819BFE98FC37C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B21DB9C5671AF25D856F2FA4CD351AB /* Foundation.framework */; };
+		3696E593FD0889716A47C477E39FE5DD /* CacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB06CA9125048730F6F8EDD92103BD0 /* CacheSerializer.swift */; };
+		3B24790A299E65B6CFACC1900FA5F689 /* Pods-ISPhotoBrowser_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A048A5DFC56964A8BFEA5688E825A27D /* Pods-ISPhotoBrowser_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B83CAEAA5ECD9540FEE98E1B6BF3E2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B21DB9C5671AF25D856F2FA4CD351AB /* Foundation.framework */; };
+		3F0857730346B11065DDCA816222C5A5 /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4022814E31F041CA8E6FFA328C8639 /* UIButton+Kingfisher.swift */; };
+		418C70EDA972A9F9EF60EA70FAF419AF /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06CAA9AFC94CB86E9CB96D78BD0923 /* ThreadHelper.swift */; };
+		53CC485802511A88A76645AADFC4AECB /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6211E96F580D34F3E3F84D65BD80EC24 /* Kingfisher.swift */; };
+		5DFF5454AB31922CC7CE0A29DE00FD6F /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EE6FB137B9949B921A201014D9660 /* ImageTransition.swift */; };
+		5E90C9850AB0CFE77387493BE032FCB2 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39F8F9D08B99E2AC56305CB28004D2 /* Indicator.swift */; };
 		62A9C71FBB062962FE851E67FEDF6421 /* Pods-ISPhotoBrowser_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6FA21EE39866E6B8A456D6EA387AB48 /* Pods-ISPhotoBrowser_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65C181962C6D89DDAFCF5959F5AF68CE /* UIImage+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C990508FE3535D5D759E244161A45 /* UIImage+Rotation.swift */; };
+		683114AFCA2A1B2645E99AF5297EEF57 /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095EF160FF9234364CDD94B8926E24A /* ImagePrefetcher.swift */; };
+		6FEAE9052676B068BFF4B96866FEBE2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B21DB9C5671AF25D856F2FA4CD351AB /* Foundation.framework */; };
+		7541CF78EF48A17BFCA8DF1BDBF3078C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DB5A84662EBAFEC776E1D05FC2A56 /* Filter.swift */; };
+		772B6E8654AE3E5FD633B8ED11CE0EA8 /* ISPhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FDD19D45FBA4C04BC376EE3FB9B71 /* ISPhotoBrowserDelegate.swift */; };
 		796B447A76182A2A9ADA6FC737E3DFF1 /* Pods-ISPhotoBrowser_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C0B390587CFC40234692FAE690179 /* Pods-ISPhotoBrowser_Tests-dummy.m */; };
-		7BEA31BC87568E14351578524366C5EC /* ISPhotoBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E02B98BD568598D2E0EE25801B5B5A7 /* ISPhotoBrowser-dummy.m */; };
-		B12D09AECB574D101ADA2FFD070FDC3C /* Pods-ISPhotoBrowser_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A048A5DFC56964A8BFEA5688E825A27D /* Pods-ISPhotoBrowser_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B28C4EBFCED41123E7F762ACE20480B2 /* ISPhotoBrowser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E87F30B32E01A530F2F743F58C74DF96 /* ISPhotoBrowser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7035F880A6EB1550AE5EF54C79C6451 /* Pods-ISPhotoBrowser_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 415DDA5D3BE5BBED50EECBD75F309707 /* Pods-ISPhotoBrowser_Example-dummy.m */; };
-		CF7A3FA5E400331F09D015FBB01A8B93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		81E78596047DB85831588AB09396E2C9 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9856B231053FF41FC9B14ACCC6F9215C /* Kingfisher-dummy.m */; };
+		86A15BDA01C1BA849BB34436990B0B62 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F4491E340CD8AFA20CA333A7248C0A /* AnimatedImageView.swift */; };
+		8AC14F8752C21B945B0EF78EB5873C21 /* KingfisherOptionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F836E9F331D1DFAA871B794EC40647 /* KingfisherOptionsInfo.swift */; };
+		911660CA2A217358D909ED173E60E122 /* ISAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5D3E47EFCB10EB396DEE12421386C /* ISAnimator.swift */; };
+		9DFAF8B29F90D8B2444F1611AEA87CBC /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449745419F19FD32556B5DB4C4713E19 /* ImageProcessor.swift */; };
+		ACA7CF8F3E5EE46EE5881DD8E4B8B372 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F78CCC4E543AE1ACD02EA7C0B0927E5 /* Kingfisher.framework */; };
+		B464C37BE18DEE4084ED8B3FC5FB97C4 /* Pods-ISPhotoBrowser_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 415DDA5D3BE5BBED50EECBD75F309707 /* Pods-ISPhotoBrowser_Example-dummy.m */; };
+		BD8850A21ADD6DE98660838FBC593923 /* ISPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457FDBE4906822E7B49655F661D17B9 /* ISPhotoCell.swift */; };
+		BDFA8991E6D046C471901CBDD61CD75D /* ISZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F75BF137C7C0D4C4072E4060D3B09D8 /* ISZoomingScrollView.swift */; };
+		BF35464AEC7B6971F0CDF61CFD5574DF /* ISPhotoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60381AB2C6364E98CE0B5FEB1C1CF67 /* ISPhotoProtocol.swift */; };
+		BF4AA3797C8B256A9A32799263B9FF4E /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACA73146F2EFD5728BDDE27435FBD5 /* ImageView+Kingfisher.swift */; };
+		BF887C183836D2C451A444A9E60079AA /* ISPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053A3421DCF175A833DD30F8457D2E3 /* ISPhoto.swift */; };
+		C41FA3D5EF3D74CEA6798F05D8212847 /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1ACC8AAF2B55915F99167EE149FA6 /* KingfisherManager.swift */; };
+		C683FC4F068D604350006829F566C726 /* ISPhotoBrowser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E87F30B32E01A530F2F743F58C74DF96 /* ISPhotoBrowser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF7A3FA5E400331F09D015FBB01A8B93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B21DB9C5671AF25D856F2FA4CD351AB /* Foundation.framework */; };
+		D0391A93A3A4FFA46D51E3FE028797DD /* RequestModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CA99214B1F57CE947563E43D6E995 /* RequestModifier.swift */; };
+		D65E8355D6F7091C569E909C39714643 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C2DC201E57C6FC489FB78275D9E14D /* CFNetwork.framework */; };
+		E4CB0D2EFD8A43E5021CC7873AD3D034 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = 814A249890448FEA6045B315BCF3CBDD /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4CC1F9D51A58C7E73444C0317043E32 /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A24D7C6D5AC7A569D95092B9FA066ABA /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB1DF113D2BEA552D79F669AF009ED75 /* ISPhotoBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E02B98BD568598D2E0EE25801B5B5A7 /* ISPhotoBrowser-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2B6A41EEE8C24A1B4DF78A3037FCEE30 /* PBXContainerItemProxy */ = {
+		5333EE186A4417A067CCC0CA1332FE2B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D5B3D323A3CA498B560D56D1D95BF051;
+			remoteGlobalIDString = E512A634BE3B0FC66E380204F0229F94;
+			remoteInfo = Kingfisher;
+		};
+		D7E3390D251385528697C2CB7C5164E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E512A634BE3B0FC66E380204F0229F94;
+			remoteInfo = Kingfisher;
+		};
+		E411B2571B50F1CC59E2B1FE48F7DF98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E751D736C67847BCEB7B0B929AC50C9E;
 			remoteInfo = ISPhotoBrowser;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B30555A1EB05B5400668A57 /* ISPhotoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISPhotoBrowser.swift; sourceTree = "<group>"; };
+		0053A3421DCF175A833DD30F8457D2E3 /* ISPhoto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ISPhoto.swift; sourceTree = "<group>"; };
+		0CCAABA051F2B62FEC94F6629032960D /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
+		0EACA73146F2EFD5728BDDE27435FBD5 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		24696213E99AEF0BDF7AACC6DA0E2FB4 /* ISPhotoBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISPhotoBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3457FDBE4906822E7B49655F661D17B9 /* ISPhotoCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ISPhotoCell.swift; sourceTree = "<group>"; };
+		34813087E9147423194D822589ECCC64 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		362D0F6F36A6474FEF8C8047E92979BD /* Pods-ISPhotoBrowser_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ISPhotoBrowser_Example.release.xcconfig"; sourceTree = "<group>"; };
+		40F4491E340CD8AFA20CA333A7248C0A /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/AnimatedImageView.swift; sourceTree = "<group>"; };
 		4121DAB0E373F1CB1F9FF84258A0AE68 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		415DDA5D3BE5BBED50EECBD75F309707 /* Pods-ISPhotoBrowser_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ISPhotoBrowser_Example-dummy.m"; sourceTree = "<group>"; };
 		436496DB8AC3818DDA3AEF646BB106B0 /* Pods-ISPhotoBrowser_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ISPhotoBrowser_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		43C4C5D82AE726087DB4B2788C38AEEA /* ISPhotoBrowser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ISPhotoBrowser-prefix.pch"; sourceTree = "<group>"; };
+		449745419F19FD32556B5DB4C4713E19 /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/ImageProcessor.swift; sourceTree = "<group>"; };
+		4A5184B8A86B04023C550CAC4C1E3D2B /* Pods_ISPhotoBrowser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISPhotoBrowser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F78CCC4E543AE1ACD02EA7C0B0927E5 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DD01AB43E986E7866A6796A5FD49BC /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		5207B9BA1FAC60A316B91128301138B6 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		58091C1CC7DF24A08745461BA25102C5 /* Pods-ISPhotoBrowser_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ISPhotoBrowser_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5F37CEEAB8EE4113EC94D0AB2B1C5A0B /* Pods_ISPhotoBrowser_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISPhotoBrowser_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5B21DB9C5671AF25D856F2FA4CD351AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5D06CAA9AFC94CB86E9CB96D78BD0923 /* ThreadHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadHelper.swift; path = Sources/ThreadHelper.swift; sourceTree = "<group>"; };
+		6211E96F580D34F3E3F84D65BD80EC24 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
+		6A5FCB27178D840548B90E198483CFAA /* ISPhotoBrowser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ISPhotoBrowser.swift; sourceTree = "<group>"; };
 		6E02B98BD568598D2E0EE25801B5B5A7 /* ISPhotoBrowser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ISPhotoBrowser-dummy.m"; sourceTree = "<group>"; };
 		6EFCA79D3298B1B3FA7B1F5DF5AA2764 /* ISPhotoBrowser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ISPhotoBrowser.xcconfig; sourceTree = "<group>"; };
+		799CA99214B1F57CE947563E43D6E995 /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
+		7F75BF137C7C0D4C4072E4060D3B09D8 /* ISZoomingScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ISZoomingScrollView.swift; sourceTree = "<group>"; };
+		814A249890448FEA6045B315BCF3CBDD /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Sources/Kingfisher.h; sourceTree = "<group>"; };
 		86540919EC624CA85EE6E4642BB98D55 /* Pods-ISPhotoBrowser_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ISPhotoBrowser_Example.modulemap"; sourceTree = "<group>"; };
 		86657E4FDDF88D903B8CE9E0B1F116E9 /* Pods-ISPhotoBrowser_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ISPhotoBrowser_Tests-resources.sh"; sourceTree = "<group>"; };
+		88C2DC201E57C6FC489FB78275D9E14D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		90639BBB859F8EA8D32148DBC3D97FA7 /* Pods-ISPhotoBrowser_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ISPhotoBrowser_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94DE4AC69094EC3015FFF1BF0AD4AFE7 /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/ImageDownloader.swift; sourceTree = "<group>"; };
+		968C4EE1CB49CA730B177A530E6BC12F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B487318BE463EDDE7003238C16D9A6 /* Pods-ISPhotoBrowser_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ISPhotoBrowser_Example-frameworks.sh"; sourceTree = "<group>"; };
-		9C92CB030BE0766FBE64C2FD91099AD7 /* Pods_ISPhotoBrowser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISPhotoBrowser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9856B231053FF41FC9B14ACCC6F9215C /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
+		9DE6AD548C8531F1E89A4AC6B1C6B3A8 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
+		9E4022814E31F041CA8E6FFA328C8639 /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
+		9EC672E8EA725C5D07B841DD0564BE8A /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image.swift; sourceTree = "<group>"; };
 		A048A5DFC56964A8BFEA5688E825A27D /* Pods-ISPhotoBrowser_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ISPhotoBrowser_Example-umbrella.h"; sourceTree = "<group>"; };
+		A095EF160FF9234364CDD94B8926E24A /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
+		A24D7C6D5AC7A569D95092B9FA066ABA /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
+		A59DB5A84662EBAFEC776E1D05FC2A56 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
+		AA1EE6FB137B9949B921A201014D9660 /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Sources/ImageTransition.swift; sourceTree = "<group>"; };
 		AB9EC658C9518F8BCADB9F1D13D6EF1F /* Pods-ISPhotoBrowser_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ISPhotoBrowser_Tests.modulemap"; sourceTree = "<group>"; };
 		ABB250E94D794D48F32EDBD1FA21D710 /* Pods-ISPhotoBrowser_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ISPhotoBrowser_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AC1A2E9B667C6E02868DA10A25634982 /* ISPhotoBrowser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ISPhotoBrowser.modulemap; sourceTree = "<group>"; };
+		AFD3C40826560CCA979FBF1A30879C5D /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/String+MD5.swift"; sourceTree = "<group>"; };
+		B3DEC0920959DC70CE633AEF2FD44338 /* Pods_ISPhotoBrowser_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISPhotoBrowser_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B614EC1520147A0621C484717A3A9603 /* Pods-ISPhotoBrowser_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ISPhotoBrowser_Example-resources.sh"; sourceTree = "<group>"; };
+		BC79E2E5D62D71F36463838727DAA58D /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
 		BC8456283C88FC375E27F5076A203AE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6541FACFAAE615B14AA35D02F25FA6A /* ISPhotoBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISPhotoBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A66ADD4CA1D566DFBD88B2F28548A6 /* Pods-ISPhotoBrowser_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ISPhotoBrowser_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		CBB88EBECE7AE0744B28515435BEF252 /* Pods-ISPhotoBrowser_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ISPhotoBrowser_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		CCEE5D608B46FF399A802A6A579DF366 /* Pods-ISPhotoBrowser_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ISPhotoBrowser_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CDB06CA9125048730F6F8EDD92103BD0 /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/CacheSerializer.swift; sourceTree = "<group>"; };
 		D017C1B955A6516C57E2BA86804A9ED2 /* Pods-ISPhotoBrowser_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ISPhotoBrowser_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D7A3C90E9DF742791B93F3793008064F /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
 		DC0873BFC21308085EF6D2FD375ACDD7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE39F8F9D08B99E2AC56305CB28004D2 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
 		E6FA21EE39866E6B8A456D6EA387AB48 /* Pods-ISPhotoBrowser_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ISPhotoBrowser_Tests-umbrella.h"; sourceTree = "<group>"; };
+		E7F836E9F331D1DFAA871B794EC40647 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
 		E87F30B32E01A530F2F743F58C74DF96 /* ISPhotoBrowser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ISPhotoBrowser-umbrella.h"; sourceTree = "<group>"; };
 		EE8C0B390587CFC40234692FAE690179 /* Pods-ISPhotoBrowser_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ISPhotoBrowser_Tests-dummy.m"; sourceTree = "<group>"; };
+		F0C72AFC42CED429C7A71F7A7704D20C /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/ImageCache.swift; sourceTree = "<group>"; };
+		F12C990508FE3535D5D759E244161A45 /* UIImage+Rotation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotation.swift"; sourceTree = "<group>"; };
+		F32FDD19D45FBA4C04BC376EE3FB9B71 /* ISPhotoBrowserDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ISPhotoBrowserDelegate.swift; sourceTree = "<group>"; };
+		F60381AB2C6364E98CE0B5FEB1C1CF67 /* ISPhotoProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ISPhotoProtocol.swift; sourceTree = "<group>"; };
+		F8D5D3E47EFCB10EB396DEE12421386C /* ISAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ISAnimator.swift; sourceTree = "<group>"; };
+		FBB1ACC8AAF2B55915F99167EE149FA6 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7AEECD7F84A8EB06A5D5DAB01098EBD2 /* Frameworks */ = {
+		707642CC67B2AD95189B889C1F2BC467 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				388A04EF2B153A5A17211D31E5E14EC4 /* Foundation.framework in Frameworks */,
+				3B83CAEAA5ECD9540FEE98E1B6BF3E2C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77A81596AD019206D261AA640A1A36C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FEAE9052676B068BFF4B96866FEBE2F /* Foundation.framework in Frameworks */,
+				ACA7CF8F3E5EE46EE5881DD8E4B8B372 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,11 +176,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E00326DC01DD9E2BA51AD6E7A481B976 /* Frameworks */ = {
+		EE8DC0CD8CD4A6BDF6E7D223AB8D77DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D77151462DC1A7C3A6A146D6EC27661 /* Foundation.framework in Frameworks */,
+				D65E8355D6F7091C569E909C39714643 /* CFNetwork.framework in Frameworks */,
+				33531219A890962BFD819BFE98FC37C8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,24 +202,30 @@
 			path = "Example/Pods/Target Support Files/ISPhotoBrowser";
 			sourceTree = "<group>";
 		};
+		1CEC2E8897692B7FDE2EE09657E7EBEE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8D5D3E47EFCB10EB396DEE12421386C /* ISAnimator.swift */,
+				0053A3421DCF175A833DD30F8457D2E3 /* ISPhoto.swift */,
+				6A5FCB27178D840548B90E198483CFAA /* ISPhotoBrowser.swift */,
+				F32FDD19D45FBA4C04BC376EE3FB9B71 /* ISPhotoBrowserDelegate.swift */,
+				3457FDBE4906822E7B49655F661D17B9 /* ISPhotoCell.swift */,
+				F60381AB2C6364E98CE0B5FEB1C1CF67 /* ISPhotoProtocol.swift */,
+				7F75BF137C7C0D4C4072E4060D3B09D8 /* ISZoomingScrollView.swift */,
+				50DD01AB43E986E7866A6796A5FD49BC /* Notifications.swift */,
+				F12C990508FE3535D5D759E244161A45 /* UIImage+Rotation.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		1E0D0CC0240D471C2A1B91F3351CE4A7 /* ISPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				6F1334EE38AF2E329F0B9EA0385E140E /* ISPhotoBrowser */,
+				4F53DAD3094BD3FBA45CFD21056FAF38 /* ISPhotoBrowser */,
 				0D5CB1E4B772714BA1EE0FC8405D232A /* Support Files */,
 			);
 			name = ISPhotoBrowser;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		2063BA9A48516033323A394ECECE21CE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C6541FACFAAE615B14AA35D02F25FA6A /* ISPhotoBrowser.framework */,
-				5F37CEEAB8EE4113EC94D0AB2B1C5A0B /* Pods_ISPhotoBrowser_Example.framework */,
-				9C92CB030BE0766FBE64C2FD91099AD7 /* Pods_ISPhotoBrowser_Tests.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		48159C010C97BE209ABAC927C78AF153 /* Pods-ISPhotoBrowser_Example */ = {
@@ -144,6 +246,14 @@
 			path = "Target Support Files/Pods-ISPhotoBrowser_Example";
 			sourceTree = "<group>";
 		};
+		4F53DAD3094BD3FBA45CFD21056FAF38 /* ISPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				1CEC2E8897692B7FDE2EE09657E7EBEE /* Classes */,
+			);
+			path = ISPhotoBrowser;
+			sourceTree = "<group>";
+		};
 		674D40ECFB8CE22B469E82DA977F548C /* Pods-ISPhotoBrowser_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,12 +272,21 @@
 			path = "Target Support Files/Pods-ISPhotoBrowser_Tests";
 			sourceTree = "<group>";
 		};
-		6F1334EE38AF2E329F0B9EA0385E140E /* ISPhotoBrowser */ = {
+		6BE6794BE1D0147A47641BFD88E0C9B1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9E3D766B09E152CAA3A16091F1876B98 /* Classes */,
+				88C2DC201E57C6FC489FB78275D9E14D /* CFNetwork.framework */,
+				5B21DB9C5671AF25D856F2FA4CD351AB /* Foundation.framework */,
 			);
-			path = ISPhotoBrowser;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6D6A3E96995405C682083EAC9705D118 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC43CE0E4B9A087C6F738A912A8078EB /* Kingfisher */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		76C7BD9778F605F05CE9D1DA5C5D395D /* Development Pods */ = {
@@ -183,8 +302,9 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				76C7BD9778F605F05CE9D1DA5C5D395D /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				2063BA9A48516033323A394ECECE21CE /* Products */,
+				A34DC41A4AC9B0D17F82B623BF369E65 /* Frameworks */,
+				6D6A3E96995405C682083EAC9705D118 /* Pods */,
+				F9FCCBF54AADDEBAFD85F135C234846C /* Products */,
 				8DA4F9F7BDD724797B0CD3B88DD75658 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -198,33 +318,89 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		9E3D766B09E152CAA3A16091F1876B98 /* Classes */ = {
+		A34DC41A4AC9B0D17F82B623BF369E65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B30555A1EB05B5400668A57 /* ISPhotoBrowser.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				4F78CCC4E543AE1ACD02EA7C0B0927E5 /* Kingfisher.framework */,
+				6BE6794BE1D0147A47641BFD88E0C9B1 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+		BC43CE0E4B9A087C6F738A912A8078EB /* Kingfisher */ = {
 			isa = PBXGroup;
 			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				40F4491E340CD8AFA20CA333A7248C0A /* AnimatedImageView.swift */,
+				9DE6AD548C8531F1E89A4AC6B1C6B3A8 /* Box.swift */,
+				CDB06CA9125048730F6F8EDD92103BD0 /* CacheSerializer.swift */,
+				A59DB5A84662EBAFEC776E1D05FC2A56 /* Filter.swift */,
+				9EC672E8EA725C5D07B841DD0564BE8A /* Image.swift */,
+				F0C72AFC42CED429C7A71F7A7704D20C /* ImageCache.swift */,
+				94DE4AC69094EC3015FFF1BF0AD4AFE7 /* ImageDownloader.swift */,
+				A095EF160FF9234364CDD94B8926E24A /* ImagePrefetcher.swift */,
+				449745419F19FD32556B5DB4C4713E19 /* ImageProcessor.swift */,
+				AA1EE6FB137B9949B921A201014D9660 /* ImageTransition.swift */,
+				0EACA73146F2EFD5728BDDE27435FBD5 /* ImageView+Kingfisher.swift */,
+				DE39F8F9D08B99E2AC56305CB28004D2 /* Indicator.swift */,
+				814A249890448FEA6045B315BCF3CBDD /* Kingfisher.h */,
+				6211E96F580D34F3E3F84D65BD80EC24 /* Kingfisher.swift */,
+				FBB1ACC8AAF2B55915F99167EE149FA6 /* KingfisherManager.swift */,
+				E7F836E9F331D1DFAA871B794EC40647 /* KingfisherOptionsInfo.swift */,
+				799CA99214B1F57CE947563E43D6E995 /* RequestModifier.swift */,
+				0CCAABA051F2B62FEC94F6629032960D /* Resource.swift */,
+				AFD3C40826560CCA979FBF1A30879C5D /* String+MD5.swift */,
+				5D06CAA9AFC94CB86E9CB96D78BD0923 /* ThreadHelper.swift */,
+				9E4022814E31F041CA8E6FFA328C8639 /* UIButton+Kingfisher.swift */,
+				DF56DAAF6901EA25B7722FFAC391B276 /* Support Files */,
 			);
-			name = iOS;
+			path = Kingfisher;
+			sourceTree = "<group>";
+		};
+		DF56DAAF6901EA25B7722FFAC391B276 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				968C4EE1CB49CA730B177A530E6BC12F /* Info.plist */,
+				5207B9BA1FAC60A316B91128301138B6 /* Kingfisher.modulemap */,
+				BC79E2E5D62D71F36463838727DAA58D /* Kingfisher.xcconfig */,
+				9856B231053FF41FC9B14ACCC6F9215C /* Kingfisher-dummy.m */,
+				D7A3C90E9DF742791B93F3793008064F /* Kingfisher-prefix.pch */,
+				A24D7C6D5AC7A569D95092B9FA066ABA /* Kingfisher-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Kingfisher";
+			sourceTree = "<group>";
+		};
+		F9FCCBF54AADDEBAFD85F135C234846C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24696213E99AEF0BDF7AACC6DA0E2FB4 /* ISPhotoBrowser.framework */,
+				34813087E9147423194D822589ECCC64 /* Kingfisher.framework */,
+				B3DEC0920959DC70CE633AEF2FD44338 /* Pods_ISPhotoBrowser_Example.framework */,
+				4A5184B8A86B04023C550CAC4C1E3D2B /* Pods_ISPhotoBrowser_Tests.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		5A2A48B1D2E14A053A55008C84F41977 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C683FC4F068D604350006829F566C726 /* ISPhotoBrowser-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E1F74FCA186C6BB8DB321B51AB44BAE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CC1F9D51A58C7E73444C0317043E32 /* Kingfisher-umbrella.h in Headers */,
+				E4CB0D2EFD8A43E5021CC7873AD3D034 /* Kingfisher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7066F6F8F9DCDCA1C8425B8B6D204693 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,43 +409,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		763EF8FBF0541E62B9DA3694BC48C8B9 /* Headers */ = {
+		8B32E74F1086E0F8DEEB93582C5DD233 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B12D09AECB574D101ADA2FFD070FDC3C /* Pods-ISPhotoBrowser_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C34844E55BC21350CD77FD0AA92BBE7C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B28C4EBFCED41123E7F762ACE20480B2 /* ISPhotoBrowser-umbrella.h in Headers */,
+				3B24790A299E65B6CFACC1900FA5F689 /* Pods-ISPhotoBrowser_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4C9F79B3868D6D9DECCB8C270C410027 /* Pods-ISPhotoBrowser_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34428DCB94C48B4F11C444F68692A3EC /* Build configuration list for PBXNativeTarget "Pods-ISPhotoBrowser_Example" */;
-			buildPhases = (
-				6C5D1393C07BA3364EC60C7BA5286B5B /* Sources */,
-				7AEECD7F84A8EB06A5D5DAB01098EBD2 /* Frameworks */,
-				763EF8FBF0541E62B9DA3694BC48C8B9 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9E90FAD8CCDF1C5B513257D15E01A367 /* PBXTargetDependency */,
-			);
-			name = "Pods-ISPhotoBrowser_Example";
-			productName = "Pods-ISPhotoBrowser_Example";
-			productReference = 5F37CEEAB8EE4113EC94D0AB2B1C5A0B /* Pods_ISPhotoBrowser_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		6B3BCB2C2E7060F21914F40329BF8597 /* Pods-ISPhotoBrowser_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4235F12128E4121A99B19E5B4A02EBE9 /* Build configuration list for PBXNativeTarget "Pods-ISPhotoBrowser_Tests" */;
@@ -284,24 +434,61 @@
 			);
 			name = "Pods-ISPhotoBrowser_Tests";
 			productName = "Pods-ISPhotoBrowser_Tests";
-			productReference = 9C92CB030BE0766FBE64C2FD91099AD7 /* Pods_ISPhotoBrowser_Tests.framework */;
+			productReference = 4A5184B8A86B04023C550CAC4C1E3D2B /* Pods_ISPhotoBrowser_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D5B3D323A3CA498B560D56D1D95BF051 /* ISPhotoBrowser */ = {
+		87DE2CD464953E632F01492733D3C447 /* Pods-ISPhotoBrowser_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52501E1395D360D21D4086EEC7CDCE61 /* Build configuration list for PBXNativeTarget "ISPhotoBrowser" */;
+			buildConfigurationList = 25AB40FA140EDE44ED102F67653FCC1A /* Build configuration list for PBXNativeTarget "Pods-ISPhotoBrowser_Example" */;
 			buildPhases = (
-				57F679429B8E937067D7EE4A1FE8334E /* Sources */,
-				E00326DC01DD9E2BA51AD6E7A481B976 /* Frameworks */,
-				C34844E55BC21350CD77FD0AA92BBE7C /* Headers */,
+				6C49ED18F2E92838A1CC28E8AD4D605D /* Sources */,
+				707642CC67B2AD95189B889C1F2BC467 /* Frameworks */,
+				8B32E74F1086E0F8DEEB93582C5DD233 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F34F373C320D3F15808102076B16043 /* PBXTargetDependency */,
+				2FF322A08D71F5CC6114CED815CA1FFE /* PBXTargetDependency */,
+			);
+			name = "Pods-ISPhotoBrowser_Example";
+			productName = "Pods-ISPhotoBrowser_Example";
+			productReference = B3DEC0920959DC70CE633AEF2FD44338 /* Pods_ISPhotoBrowser_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E512A634BE3B0FC66E380204F0229F94 /* Kingfisher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 975EE0E029CD4B6B6A7A38C48C982CF3 /* Build configuration list for PBXNativeTarget "Kingfisher" */;
+			buildPhases = (
+				A014F23302C4A0037C33F2222FDE7501 /* Sources */,
+				EE8DC0CD8CD4A6BDF6E7D223AB8D77DE /* Frameworks */,
+				6E1F74FCA186C6BB8DB321B51AB44BAE /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = Kingfisher;
+			productName = Kingfisher;
+			productReference = 34813087E9147423194D822589ECCC64 /* Kingfisher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E751D736C67847BCEB7B0B929AC50C9E /* ISPhotoBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F78DF9E19851F639645583A394253FC /* Build configuration list for PBXNativeTarget "ISPhotoBrowser" */;
+			buildPhases = (
+				79EBD6169B1761B5DA2299A062905311 /* Sources */,
+				77A81596AD019206D261AA640A1A36C0 /* Frameworks */,
+				5A2A48B1D2E14A053A55008C84F41977 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6779F390FCE022DD68DABDE23599DF2E /* PBXTargetDependency */,
+			);
 			name = ISPhotoBrowser;
 			productName = ISPhotoBrowser;
-			productReference = C6541FACFAAE615B14AA35D02F25FA6A /* ISPhotoBrowser.framework */;
+			productReference = 24696213E99AEF0BDF7AACC6DA0E2FB4 /* ISPhotoBrowser.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -312,11 +499,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					D5B3D323A3CA498B560D56D1D95BF051 = {
-						LastSwiftMigration = 0830;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -326,32 +508,69 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2063BA9A48516033323A394ECECE21CE /* Products */;
+			productRefGroup = F9FCCBF54AADDEBAFD85F135C234846C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D5B3D323A3CA498B560D56D1D95BF051 /* ISPhotoBrowser */,
-				4C9F79B3868D6D9DECCB8C270C410027 /* Pods-ISPhotoBrowser_Example */,
+				E751D736C67847BCEB7B0B929AC50C9E /* ISPhotoBrowser */,
+				E512A634BE3B0FC66E380204F0229F94 /* Kingfisher */,
+				87DE2CD464953E632F01492733D3C447 /* Pods-ISPhotoBrowser_Example */,
 				6B3BCB2C2E7060F21914F40329BF8597 /* Pods-ISPhotoBrowser_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		57F679429B8E937067D7EE4A1FE8334E /* Sources */ = {
+		6C49ED18F2E92838A1CC28E8AD4D605D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BEA31BC87568E14351578524366C5EC /* ISPhotoBrowser-dummy.m in Sources */,
-				0B30555B1EB05B5400668A57 /* ISPhotoBrowser.swift in Sources */,
+				B464C37BE18DEE4084ED8B3FC5FB97C4 /* Pods-ISPhotoBrowser_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6C5D1393C07BA3364EC60C7BA5286B5B /* Sources */ = {
+		79EBD6169B1761B5DA2299A062905311 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7035F880A6EB1550AE5EF54C79C6451 /* Pods-ISPhotoBrowser_Example-dummy.m in Sources */,
+				911660CA2A217358D909ED173E60E122 /* ISAnimator.swift in Sources */,
+				BF887C183836D2C451A444A9E60079AA /* ISPhoto.swift in Sources */,
+				EB1DF113D2BEA552D79F669AF009ED75 /* ISPhotoBrowser-dummy.m in Sources */,
+				08CCF228C316947672E143C40BCDA4EB /* ISPhotoBrowser.swift in Sources */,
+				772B6E8654AE3E5FD633B8ED11CE0EA8 /* ISPhotoBrowserDelegate.swift in Sources */,
+				BD8850A21ADD6DE98660838FBC593923 /* ISPhotoCell.swift in Sources */,
+				BF35464AEC7B6971F0CDF61CFD5574DF /* ISPhotoProtocol.swift in Sources */,
+				BDFA8991E6D046C471901CBDD61CD75D /* ISZoomingScrollView.swift in Sources */,
+				2EC64C53E8A4EED8CF5313B748BA32EB /* Notifications.swift in Sources */,
+				65C181962C6D89DDAFCF5959F5AF68CE /* UIImage+Rotation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A014F23302C4A0037C33F2222FDE7501 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86A15BDA01C1BA849BB34436990B0B62 /* AnimatedImageView.swift in Sources */,
+				32D4FD40292BA24575FE62ED6EAD913D /* Box.swift in Sources */,
+				3696E593FD0889716A47C477E39FE5DD /* CacheSerializer.swift in Sources */,
+				7541CF78EF48A17BFCA8DF1BDBF3078C /* Filter.swift in Sources */,
+				2B1790A5E2DAC8793C859A55F27BEDB5 /* Image.swift in Sources */,
+				00951FF1D817A0CB4610FFA9FF0CF7F0 /* ImageCache.swift in Sources */,
+				2D756A5CA7E424FD10FA44853BB47EFC /* ImageDownloader.swift in Sources */,
+				683114AFCA2A1B2645E99AF5297EEF57 /* ImagePrefetcher.swift in Sources */,
+				9DFAF8B29F90D8B2444F1611AEA87CBC /* ImageProcessor.swift in Sources */,
+				5DFF5454AB31922CC7CE0A29DE00FD6F /* ImageTransition.swift in Sources */,
+				BF4AA3797C8B256A9A32799263B9FF4E /* ImageView+Kingfisher.swift in Sources */,
+				5E90C9850AB0CFE77387493BE032FCB2 /* Indicator.swift in Sources */,
+				81E78596047DB85831588AB09396E2C9 /* Kingfisher-dummy.m in Sources */,
+				53CC485802511A88A76645AADFC4AECB /* Kingfisher.swift in Sources */,
+				C41FA3D5EF3D74CEA6798F05D8212847 /* KingfisherManager.swift in Sources */,
+				8AC14F8752C21B945B0EF78EB5873C21 /* KingfisherOptionsInfo.swift in Sources */,
+				D0391A93A3A4FFA46D51E3FE028797DD /* RequestModifier.swift in Sources */,
+				1C4F96E6595364246C4527C4B132729C /* Resource.swift in Sources */,
+				0D1C9B2E3D0AC4CC9C05975EC8E97A56 /* String+MD5.swift in Sources */,
+				418C70EDA972A9F9EF60EA70FAF419AF /* ThreadHelper.swift in Sources */,
+				3F0857730346B11065DDCA816222C5A5 /* UIButton+Kingfisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,53 +585,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9E90FAD8CCDF1C5B513257D15E01A367 /* PBXTargetDependency */ = {
+		2FF322A08D71F5CC6114CED815CA1FFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kingfisher;
+			target = E512A634BE3B0FC66E380204F0229F94 /* Kingfisher */;
+			targetProxy = D7E3390D251385528697C2CB7C5164E3 /* PBXContainerItemProxy */;
+		};
+		6779F390FCE022DD68DABDE23599DF2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kingfisher;
+			target = E512A634BE3B0FC66E380204F0229F94 /* Kingfisher */;
+			targetProxy = 5333EE186A4417A067CCC0CA1332FE2B /* PBXContainerItemProxy */;
+		};
+		7F34F373C320D3F15808102076B16043 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ISPhotoBrowser;
-			target = D5B3D323A3CA498B560D56D1D95BF051 /* ISPhotoBrowser */;
-			targetProxy = 2B6A41EEE8C24A1B4DF78A3037FCEE30 /* PBXContainerItemProxy */;
+			target = E751D736C67847BCEB7B0B929AC50C9E /* ISPhotoBrowser */;
+			targetProxy = E411B2571B50F1CC59E2B1FE48F7DF98 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		28376C79E9D92DED85134A9877BE0E3A /* Release */ = {
+		16A95C9FE0A6445D49122D634E2BABC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EFCA79D3298B1B3FA7B1F5DF5AA2764 /* ISPhotoBrowser.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ISPhotoBrowser/ISPhotoBrowser-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ISPhotoBrowser/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ISPhotoBrowser/ISPhotoBrowser.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ISPhotoBrowser;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		29198E26744F4D7BE8896B7B8490FB9A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D017C1B955A6516C57E2BA86804A9ED2 /* Pods-ISPhotoBrowser_Example.debug.xcconfig */;
+			baseConfigurationReference = BC79E2E5D62D71F36463838727DAA58D /* Kingfisher.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -426,18 +622,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ISPhotoBrowser_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Kingfisher/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ISPhotoBrowser_Example/Pods-ISPhotoBrowser_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ISPhotoBrowser_Example;
+				PRODUCT_NAME = Kingfisher;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -448,6 +640,40 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		1BB043488291849138A2D5369D75F163 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC79E2E5D62D71F36463838727DAA58D /* Kingfisher.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Kingfisher/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Kingfisher;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		345CC476DF4A7516DBD2220CF5035FF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -497,6 +723,45 @@
 			};
 			name = Debug;
 		};
+		6C031F8E948B793AFBAEEE1EBA878BC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D017C1B955A6516C57E2BA86804A9ED2 /* Pods-ISPhotoBrowser_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ISPhotoBrowser_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ISPhotoBrowser_Example/Pods-ISPhotoBrowser_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ISPhotoBrowser_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -541,7 +806,77 @@
 			};
 			name = Release;
 		};
-		936A4A3D243111B02A9A75275C45FB14 /* Release */ = {
+		96EED0F0C3CEB5C34D7281EC2FB3E9FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABB250E94D794D48F32EDBD1FA21D710 /* Pods-ISPhotoBrowser_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ISPhotoBrowser_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ISPhotoBrowser_Tests/Pods-ISPhotoBrowser_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ISPhotoBrowser_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9E5234892E3B016C31E4D86F31C4F952 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EFCA79D3298B1B3FA7B1F5DF5AA2764 /* ISPhotoBrowser.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ISPhotoBrowser/ISPhotoBrowser-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ISPhotoBrowser/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ISPhotoBrowser/ISPhotoBrowser.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ISPhotoBrowser;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9F395F671530F2289E786FECD5499D47 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 362D0F6F36A6474FEF8C8047E92979BD /* Pods-ISPhotoBrowser_Example.release.xcconfig */;
 			buildSettings = {
@@ -579,41 +914,40 @@
 			};
 			name = Release;
 		};
-		96EED0F0C3CEB5C34D7281EC2FB3E9FA /* Release */ = {
+		A0BB713A68E7568547C761BD24F44A66 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABB250E94D794D48F32EDBD1FA21D710 /* Pods-ISPhotoBrowser_Tests.release.xcconfig */;
+			baseConfigurationReference = 6EFCA79D3298B1B3FA7B1F5DF5AA2764 /* ISPhotoBrowser.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ISPhotoBrowser_Tests/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ISPhotoBrowser/ISPhotoBrowser-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ISPhotoBrowser/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ISPhotoBrowser_Tests/Pods-ISPhotoBrowser_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ISPhotoBrowser_Tests;
+				MODULEMAP_FILE = "Target Support Files/ISPhotoBrowser/ISPhotoBrowser.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ISPhotoBrowser;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		AB956150A794D2D56A6C7ECF2E99E240 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -651,59 +985,23 @@
 			};
 			name = Debug;
 		};
-		CC178189B73908E32ECE5B1411F0B07F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EFCA79D3298B1B3FA7B1F5DF5AA2764 /* ISPhotoBrowser.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ISPhotoBrowser/ISPhotoBrowser-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ISPhotoBrowser/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ISPhotoBrowser/ISPhotoBrowser.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ISPhotoBrowser;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		25AB40FA140EDE44ED102F67653FCC1A /* Build configuration list for PBXNativeTarget "Pods-ISPhotoBrowser_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C031F8E948B793AFBAEEE1EBA878BC2 /* Debug */,
+				9F395F671530F2289E786FECD5499D47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				345CC476DF4A7516DBD2220CF5035FF3 /* Debug */,
 				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		34428DCB94C48B4F11C444F68692A3EC /* Build configuration list for PBXNativeTarget "Pods-ISPhotoBrowser_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				29198E26744F4D7BE8896B7B8490FB9A /* Debug */,
-				936A4A3D243111B02A9A75275C45FB14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -717,11 +1015,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52501E1395D360D21D4086EEC7CDCE61 /* Build configuration list for PBXNativeTarget "ISPhotoBrowser" */ = {
+		7F78DF9E19851F639645583A394253FC /* Build configuration list for PBXNativeTarget "ISPhotoBrowser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC178189B73908E32ECE5B1411F0B07F /* Debug */,
-				28376C79E9D92DED85134A9877BE0E3A /* Release */,
+				A0BB713A68E7568547C761BD24F44A66 /* Debug */,
+				9E5234892E3B016C31E4D86F31C4F952 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		975EE0E029CD4B6B6A7A38C48C982CF3 /* Build configuration list for PBXNativeTarget "Kingfisher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16A95C9FE0A6445D49122D634E2BABC3 /* Debug */,
+				1BB043488291849138A2D5369D75F163 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

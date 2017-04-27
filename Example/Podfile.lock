@@ -1,5 +1,7 @@
 PODS:
-  - ISPhotoBrowser (0.1.0)
+  - ISPhotoBrowser (0.1.0):
+    - Kingfisher (~> 3.6.2)
+  - Kingfisher (3.6.2)
 
 DEPENDENCIES:
   - ISPhotoBrowser (from `../`)
@@ -9,7 +11,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ISPhotoBrowser: a84d022362cd35d9537de0a717d956741c34d41e
+  ISPhotoBrowser: 2ec89f59d73fdf1ddcceed1acb92b5ad9391c1d4
+  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
 
 PODFILE CHECKSUM: d2e516cf39567c58a705ea16eaef53dd37156c6c
 

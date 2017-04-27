@@ -1,22 +1,27 @@
 {
   "name": "ISPhotoBrowser",
   "version": "0.1.0",
-  "summary": "A short description of ISPhotoBrowser.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/isaced@163.com/ISPhotoBrowser",
+  "summary": "A simple iOS photo browser written in Swift.",
+  "description": "Photo browser for iOS.",
+  "homepage": "https://github.com/isaced/ISPhotoBrowser",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "isaced@163.com": "isaced@163.com"
+    "isaced": "isaced@163.com"
   },
   "source": {
-    "git": "https://github.com/isaced@163.com/ISPhotoBrowser.git",
+    "git": "https://github.com/isaced/ISPhotoBrowser.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ISPhotoBrowser/Classes/**/*"
+  "source_files": "ISPhotoBrowser/Classes/**/*",
+  "dependencies": {
+    "Kingfisher": [
+      "~> 3.6.2"
+    ]
+  }
 }
