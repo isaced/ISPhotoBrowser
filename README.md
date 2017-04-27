@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/ISPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/ISPhotoBrowser)
 [![Platform](https://img.shields.io/cocoapods/p/ISPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/ISPhotoBrowser)
 
+ISPhotoBrowser is a new implementation based on [IDMPhotoBrowser](https://github.com/thiagoperes/IDMPhotoBrowser), [MWPhotoBrowser](https://github.com/mwaterfall/MWPhotoBrowser), [SKPhotoBrowser](https://github.com/suzuki-0000/SKPhotoBrowser).
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -12,7 +14,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Requirements
 
 - iOS8+
-- Swift3
+- Swift3+
 
 ## Installation
 
