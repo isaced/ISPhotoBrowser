@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00951FF1D817A0CB4610FFA9FF0CF7F0 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C72AFC42CED429C7A71F7A7704D20C /* ImageCache.swift */; };
 		08CCF228C316947672E143C40BCDA4EB /* ISPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FCB27178D840548B90E198483CFAA /* ISPhotoBrowser.swift */; };
+		0B755E4E1EB34A8C005CBA02 /* UIView+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B755E4D1EB34A8C005CBA02 /* UIView+Radius.swift */; };
 		0D1C9B2E3D0AC4CC9C05975EC8E97A56 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3C40826560CCA979FBF1A30879C5D /* String+MD5.swift */; };
 		1C4F96E6595364246C4527C4B132729C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCAABA051F2B62FEC94F6629032960D /* Resource.swift */; };
 		2B1790A5E2DAC8793C859A55F27BEDB5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC672E8EA725C5D07B841DD0564BE8A /* Image.swift */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		0053A3421DCF175A833DD30F8457D2E3 /* ISPhoto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ISPhoto.swift; sourceTree = "<group>"; };
+		0B755E4D1EB34A8C005CBA02 /* UIView+Radius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Radius.swift"; sourceTree = "<group>"; };
 		0CCAABA051F2B62FEC94F6629032960D /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
 		0EACA73146F2EFD5728BDDE27435FBD5 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		24696213E99AEF0BDF7AACC6DA0E2FB4 /* ISPhotoBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISPhotoBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +216,7 @@
 				7F75BF137C7C0D4C4072E4060D3B09D8 /* ISZoomingScrollView.swift */,
 				50DD01AB43E986E7866A6796A5FD49BC /* Notifications.swift */,
 				F12C990508FE3535D5D759E244161A45 /* UIImage+Rotation.swift */,
+				0B755E4D1EB34A8C005CBA02 /* UIView+Radius.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			files = (
 				911660CA2A217358D909ED173E60E122 /* ISAnimator.swift in Sources */,
 				BF887C183836D2C451A444A9E60079AA /* ISPhoto.swift in Sources */,
+				0B755E4E1EB34A8C005CBA02 /* UIView+Radius.swift in Sources */,
 				EB1DF113D2BEA552D79F669AF009ED75 /* ISPhotoBrowser-dummy.m in Sources */,
 				08CCF228C316947672E143C40BCDA4EB /* ISPhotoBrowser.swift in Sources */,
 				772B6E8654AE3E5FD633B8ED11CE0EA8 /* ISPhotoBrowserDelegate.swift in Sources */,

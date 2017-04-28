@@ -38,7 +38,7 @@ class ISAnimator: NSObject, ISPhotoBrowserAnimatorDelegate {
             return
         }
         
-//        let photo = browser.photoAtIndex(browser.currentPageIndex)
+        senderViewForAnimation?.isHidden = true
         let imageFromView = (senderOriginImage ?? browser.getImageFromView(sender)).rotateImageByOrientation()
         let imageRatio = imageFromView.size.width / imageFromView.size.height
         
@@ -49,37 +49,33 @@ class ISAnimator: NSObject, ISPhotoBrowserAnimatorDelegate {
         resizableImageView!.frame = senderViewOriginalFrame
         resizableImageView!.clipsToBounds = true
         if let conentMode = senderViewForAnimation?.contentMode {
-            resizableImageView!.contentMode = conentMode //photo.contentMode
+            resizableImageView!.contentMode = conentMode
         }
         
-//        if sender.layer.cornerRadius != 0 {
-//            let duration = (animationDuration * Double(animationDamping))
-//            resizableImageView!.layer.masksToBounds = true
-//            resizableImageView!.addCornerRadiusAnimation(sender.layer.cornerRadius, to: 0, duration: duration)
-//        }
+        if sender.layer.cornerRadius != 0 {
+            let duration = (animationDuration * Double(animationDamping))
+            resizableImageView!.layer.masksToBounds = true
+            resizableImageView!.addCornerRadiusAnimation(sender.layer.cornerRadius, to: 0, duration: duration)
+        }
+        
         window.addSubview(resizableImageView!)
         
         presentAnimation(browser)
     }
     
     func willDismiss(_ browser: ISPhotoBrowser) {
-        guard let sender = browser.delegate?.viewForPhoto(browser, index: browser.currentPageIndex),
-            let image = browser.photoAtIndex(browser.currentPageIndex).underlyingImage,
-            let scrollView = browser.pageDisplayedAtIndex(browser.currentPageIndex) else {
+        guard let image = browser.photoAtIndex(browser.currentPageIndex).underlyingImage, let scrollView = browser.pageDisplayedAtIndex(browser.currentPageIndex) else {
             
                 senderViewForAnimation?.isHidden = false
                 browser.dismissPhotoBrowser(animated: false)
                 return
         }
-        
-        senderViewForAnimation = sender
+
         browser.view.isHidden = true
         browser.backgroundView.isHidden = false
         browser.backgroundView.alpha = 1
         
-        senderViewOriginalFrame = calcOriginFrame(sender)
         
-//        let photo = browser.photoAtIndex(browser.currentPageIndex)
         let contentOffset = scrollView.contentOffset
         let scrollFrame = scrollView.photoImageView.frame
         let offsetY = scrollView.center.y - (scrollView.bounds.height/2)
@@ -88,17 +84,16 @@ class ISAnimator: NSObject, ISPhotoBrowserAnimatorDelegate {
                            width: scrollFrame.width,
                            height: scrollFrame.height)
         
-        //        resizableImageView.image = scrollView.photo?.underlyingImage?.rotateImageByOrientation()
         resizableImageView!.image = image.rotateImageByOrientation()
         resizableImageView!.frame = frame
         resizableImageView!.alpha = 1.0
         resizableImageView!.clipsToBounds = true
-//        resizableImageView!.contentMode = photo.contentMode
-//        if let view = senderViewForAnimation , view.layer.cornerRadius != 0 {
-//            let duration = (animationDuration * Double(animationDamping))
-//            resizableImageView!.layer.masksToBounds = true
-//            resizableImageView!.addCornerRadiusAnimation(0, to: view.layer.cornerRadius, duration: duration)
-//        }
+        
+        if let view = senderViewForAnimation , view.layer.cornerRadius != 0 {
+            let duration = (animationDuration * Double(animationDamping))
+            resizableImageView!.layer.masksToBounds = true
+            resizableImageView!.addCornerRadiusAnimation(0, to: view.layer.cornerRadius, duration: duration)
+        }
         
         dismissAnimation(browser)
     }
@@ -155,6 +150,7 @@ private extension ISAnimator {
             self.resizableImageView?.layer.frame = self.senderViewOriginalFrame
         }, completion: { (Bool) -> () in
             browser.dismissPhotoBrowser(animated: true) {
+                self.senderViewForAnimation?.isHidden = false
                 self.resizableImageView?.removeFromSuperview()
             }
         })
