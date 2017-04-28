@@ -8,9 +8,14 @@ ISPhotoBrowser is a new implementation based on [IDMPhotoBrowser](https://github
 
 - [x] Can display one or more images by providing either UIImage objects, file paths or URLs
 - [x] Handles the downloading and caching of photos from the web seamlessly
-- [x] Photos can be zoomed and panned, and optional captions can be displayed
+- [x] Photos can be zoomed and panned
 - [x] Minimalistic Facebook-like interface, swipe up/down to dismiss
 - [x] Uses Kingfisher for image loading
+- [ ] Landscape handling
+- [ ] Highly customized
+- [ ] Long pictures optimization
+- [ ] Image progress shown
+- [ ] GIF support
 
 ## Requirements
 
