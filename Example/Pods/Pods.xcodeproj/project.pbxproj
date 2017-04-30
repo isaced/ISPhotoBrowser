@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00951FF1D817A0CB4610FFA9FF0CF7F0 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C72AFC42CED429C7A71F7A7704D20C /* ImageCache.swift */; };
 		08CCF228C316947672E143C40BCDA4EB /* ISPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FCB27178D840548B90E198483CFAA /* ISPhotoBrowser.swift */; };
+		0B46BE761EB5D415007DDFE5 /* ISCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B46BE751EB5D415007DDFE5 /* ISCollectionViewLayout.swift */; };
 		0B755E4E1EB34A8C005CBA02 /* UIView+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B755E4D1EB34A8C005CBA02 /* UIView+Radius.swift */; };
 		0D1C9B2E3D0AC4CC9C05975EC8E97A56 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3C40826560CCA979FBF1A30879C5D /* String+MD5.swift */; };
 		1C4F96E6595364246C4527C4B132729C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCAABA051F2B62FEC94F6629032960D /* Resource.swift */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		0053A3421DCF175A833DD30F8457D2E3 /* ISPhoto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ISPhoto.swift; sourceTree = "<group>"; };
+		0B46BE751EB5D415007DDFE5 /* ISCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISCollectionViewLayout.swift; sourceTree = "<group>"; };
 		0B755E4D1EB34A8C005CBA02 /* UIView+Radius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Radius.swift"; sourceTree = "<group>"; };
 		0CCAABA051F2B62FEC94F6629032960D /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
 		0EACA73146F2EFD5728BDDE27435FBD5 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				6A5FCB27178D840548B90E198483CFAA /* ISPhotoBrowser.swift */,
 				F32FDD19D45FBA4C04BC376EE3FB9B71 /* ISPhotoBrowserDelegate.swift */,
 				3457FDBE4906822E7B49655F661D17B9 /* ISPhotoCell.swift */,
+				0B46BE751EB5D415007DDFE5 /* ISCollectionViewLayout.swift */,
 				F60381AB2C6364E98CE0B5FEB1C1CF67 /* ISPhotoProtocol.swift */,
 				7F75BF137C7C0D4C4072E4060D3B09D8 /* ISZoomingScrollView.swift */,
 				50DD01AB43E986E7866A6796A5FD49BC /* Notifications.swift */,
@@ -536,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B46BE761EB5D415007DDFE5 /* ISCollectionViewLayout.swift in Sources */,
 				911660CA2A217358D909ED173E60E122 /* ISAnimator.swift in Sources */,
 				BF887C183836D2C451A444A9E60079AA /* ISPhoto.swift in Sources */,
 				0B755E4E1EB34A8C005CBA02 /* UIView+Radius.swift in Sources */,

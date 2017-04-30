@@ -10,10 +10,10 @@ import UIKit
 
 let ISPhotoCellMargin = 20.0
 
-public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource {
+public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     lazy var photoCollectionView: UICollectionView = {
-        return UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        return UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: ISCollectionViewLayout())
     }()
 
     // data
@@ -78,14 +78,12 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource {
         
         // Collection View
         if let collectionViewLayout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.itemSize = CGSize(width: UIScreen.main.bounds.width + CGFloat(ISPhotoCellMargin), height: UIScreen.main.bounds.height)
             collectionViewLayout.scrollDirection = .horizontal
             collectionViewLayout.minimumLineSpacing = 0
             collectionViewLayout.minimumInteritemSpacing = 0
             collectionViewLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
         }
-        
-        photoCollectionView.frame.size.width = UIScreen.main.bounds.size.width + CGFloat(ISPhotoCellMargin)
+
         photoCollectionView.isPagingEnabled = true
         photoCollectionView.showsVerticalScrollIndicator = true
         photoCollectionView.showsHorizontalScrollIndicator = true
@@ -93,7 +91,12 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource {
         photoCollectionView.backgroundColor = .clear
         photoCollectionView.dataSource = self
         photoCollectionView.delegate = self
+        photoCollectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(photoCollectionView)
+        self.view.addConstraints([NSLayoutConstraint(item: photoCollectionView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 0),
+                                  NSLayoutConstraint(item: photoCollectionView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 0),
+                                  NSLayoutConstraint(item: photoCollectionView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1, constant: CGFloat(ISPhotoCellMargin)),
+                                  NSLayoutConstraint(item: photoCollectionView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1, constant: 0)])
         
         // Backgorund view
         backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -101,19 +104,40 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource {
         backgroundView.alpha = 0.0
         self.view.addSubview(backgroundView)
         
+        self.view.layoutIfNeeded()
+        
         // init page
         if initialPageIndex != 0 {
             scrollToPage(pageIndex: initialPageIndex, animated: false)
         }
-        
+
         // Pan Gesture
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(ISPhotoBrowser.panGestureRecognized(_:)))
         panGesture.minimumNumberOfTouches = 1
         panGesture.maximumNumberOfTouches = 1
         view.addGestureRecognizer(panGesture)
-        
-        // present animation
+//
+//        // present animation
         animator.willPresent(self)
+    }
+
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        for cell in photoCollectionView.visibleCells {
+            if let cell = cell as? ISPhotoCell {
+                cell.updateZoomScalesForCurrentBounds()
+            }
+        }
+    }
+    
+    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        guard let flowLayout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        // force layout for update item size
+        flowLayout.invalidateLayout()
     }
     
     // MARK: - UICollectionViewDataSource
@@ -128,6 +152,10 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource {
         return cell
     }
     
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width + CGFloat(ISPhotoCellMargin), height: view.frame.height)
+    }
+    
     // MARK: -
     
     func photoAtIndex(_ index: Int) -> ISPhotoProtocol {
@@ -140,16 +168,14 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource {
     }
     
     // MARK: -
-    func getImageFromView(_ sender: UIView) -> UIImage {
+    func getImageFromView(_ sender: UIView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(sender.frame.size, true, 0.0)
         sender.layer.render(in: UIGraphicsGetCurrentContext()!)
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return result!
+        return result
     }
     open func prepareForClosePhotoBrowser() {
-//        cancelControlHiding()
-//        applicationWindow.removeGestureRecognizer(panGesture)
         NSObject.cancelPreviousPerformRequests(withTarget: self)
     }
     
@@ -162,12 +188,10 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource {
         
         dismiss(animated: !animated) {
             completion?()
-//            self.delegate?.didDismissAtPageIndex?(self.currentPageIndex)
         }
     }
     
     open func determineAndClose() {
-//        delegate?.willDismissAtPageIndex?(currentPageIndex)
         animator.willDismiss(self)
     }
 
@@ -194,7 +218,6 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource {
             firstX = zoomingScrollView.center.x
             firstY = zoomingScrollView.center.y
             
-//            hideControls()
             setNeedsStatusBarAppearanceUpdate()
         }
         
@@ -249,6 +272,7 @@ extension ISPhotoBrowser: UICollectionViewDelegate {
         // Calculate current page
         let visibleBounds = scrollView.bounds
         currentPageIndex = min(max(Int(floor(visibleBounds.midX / visibleBounds.width)), 0), photos.count - 1)
+        print("scrollViewDidScroll - currentPageIndex: \(currentPageIndex)")
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

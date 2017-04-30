@@ -66,7 +66,6 @@ open class ISZoomingScrollView: UIScrollView {
         backgroundColor = .clear
         delegate = self
         decelerationRate = UIScrollViewDecelerationRateFast
-        autoresizingMask = [.flexibleWidth, .flexibleTopMargin, .flexibleBottomMargin, .flexibleRightMargin, .flexibleLeftMargin]
     }
     
     // MARK: - override
@@ -105,14 +104,13 @@ open class ISZoomingScrollView: UIScrollView {
         minimumZoomScale = 1
         zoomScale = 1
         
-        // Bail if no image
-        guard let _ = photoImageView.image else { return }
+        guard let photoImageView = photoImageView else { return }
         
         // Reset position
         photoImageView.frame = CGRect(x: 0, y: 0, width: photoImageView.frame.size.width, height: photoImageView.frame.size.height)
         
         // Sizes
-        let boundsSize = bounds.size
+        let boundsSize = UIScreen.main.bounds.size
         let imageSize = photoImageView.frame.size
         
         // Calculate Min
@@ -157,7 +155,7 @@ open class ISZoomingScrollView: UIScrollView {
         
         // reset position
         photoImageView.frame = CGRect(x: 0, y: 0, width: photoImageView.frame.size.width, height: photoImageView.frame.size.height)
-        setNeedsLayout()
+//        setNeedsLayout()
     }
     
     // MARK: - image

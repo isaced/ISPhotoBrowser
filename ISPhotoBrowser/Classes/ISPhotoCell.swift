@@ -29,14 +29,19 @@ class ISPhotoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        zoomingScrollView.layoutSubviews()
+    func config() {
+        var zoomingScrollViewFrame = self.bounds
+        zoomingScrollViewFrame.size.width = zoomingScrollViewFrame.size.width - CGFloat(ISPhotoCellMargin)
+        zoomingScrollView = ISZoomingScrollView(frame: zoomingScrollViewFrame)
+        zoomingScrollView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(zoomingScrollView)
+        self.addConstraints([NSLayoutConstraint(item: zoomingScrollView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0),
+                             NSLayoutConstraint(item: zoomingScrollView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0),
+                             NSLayoutConstraint(item: zoomingScrollView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: CGFloat(-ISPhotoCellMargin)),
+                             NSLayoutConstraint(item: zoomingScrollView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)])
     }
     
-    func config() {
-        var frame = self.bounds
-        frame.size.width = frame.size.width - CGFloat(ISPhotoCellMargin)
-        zoomingScrollView = ISZoomingScrollView(frame: frame)
-        addSubview(zoomingScrollView)
+    func updateZoomScalesForCurrentBounds() {
+        zoomingScrollView.setMaxMinZoomScalesForCurrentBounds()
     }
 }

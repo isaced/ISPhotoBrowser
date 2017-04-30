@@ -39,27 +39,29 @@ class ISAnimator: NSObject, ISPhotoBrowserAnimatorDelegate {
         }
         
         senderViewForAnimation?.isHidden = true
-        let imageFromView = (senderOriginImage ?? browser.getImageFromView(sender)).rotateImageByOrientation()
-        let imageRatio = imageFromView.size.width / imageFromView.size.height
-        
-        senderViewOriginalFrame = calcOriginFrame(sender)
-        finalImageViewFrame = calcFinalFrame(imageRatio)
-        
-        resizableImageView = UIImageView(image: imageFromView)
-        resizableImageView!.frame = senderViewOriginalFrame
-        resizableImageView!.clipsToBounds = true
-        if let conentMode = senderViewForAnimation?.contentMode {
-            resizableImageView!.contentMode = conentMode
+        if var imageFromView = senderOriginImage ?? browser.getImageFromView(sender) {
+            imageFromView = imageFromView.rotateImageByOrientation()
+            let imageRatio = imageFromView.size.width / imageFromView.size.height
+            
+            senderViewOriginalFrame = calcOriginFrame(sender)
+            finalImageViewFrame = calcFinalFrame(imageRatio)
+            
+            resizableImageView = UIImageView(image: imageFromView)
+            resizableImageView?.frame = senderViewOriginalFrame
+            resizableImageView?.clipsToBounds = true
+            if let conentMode = senderViewForAnimation?.contentMode {
+                resizableImageView?.contentMode = conentMode
+            }
+            
+            if sender.layer.cornerRadius != 0 {
+                let duration = (animationDuration * Double(animationDamping))
+                resizableImageView?.layer.masksToBounds = true
+                resizableImageView?.addCornerRadiusAnimation(sender.layer.cornerRadius, to: 0, duration: duration)
+            }
+            
+            window.addSubview(resizableImageView!)
         }
-        
-        if sender.layer.cornerRadius != 0 {
-            let duration = (animationDuration * Double(animationDamping))
-            resizableImageView!.layer.masksToBounds = true
-            resizableImageView!.addCornerRadiusAnimation(sender.layer.cornerRadius, to: 0, duration: duration)
-        }
-        
-        window.addSubview(resizableImageView!)
-        
+
         presentAnimation(browser)
     }
     
@@ -75,26 +77,27 @@ class ISAnimator: NSObject, ISPhotoBrowserAnimatorDelegate {
         browser.backgroundView.isHidden = false
         browser.backgroundView.alpha = 1
         
-        
-        let contentOffset = scrollView.contentOffset
-        let scrollFrame = scrollView.photoImageView.frame
-        let offsetY = scrollView.center.y - (scrollView.bounds.height/2)
-        let frame = CGRect(x: scrollFrame.origin.x - contentOffset.x,
-                           y: scrollFrame.origin.y + contentOffset.y + offsetY,
-                           width: scrollFrame.width,
-                           height: scrollFrame.height)
-        
-        resizableImageView!.image = image.rotateImageByOrientation()
-        resizableImageView!.frame = frame
-        resizableImageView!.alpha = 1.0
-        resizableImageView!.clipsToBounds = true
-        
-        if let view = senderViewForAnimation , view.layer.cornerRadius != 0 {
-            let duration = (animationDuration * Double(animationDamping))
-            resizableImageView!.layer.masksToBounds = true
-            resizableImageView!.addCornerRadiusAnimation(0, to: view.layer.cornerRadius, duration: duration)
+        if let resizableImageView = resizableImageView {
+            let contentOffset = scrollView.contentOffset
+            let scrollFrame = scrollView.photoImageView.frame
+            let offsetY = scrollView.center.y - (scrollView.bounds.height/2)
+            let frame = CGRect(x: scrollFrame.origin.x - contentOffset.x,
+                               y: scrollFrame.origin.y + contentOffset.y + offsetY,
+                               width: scrollFrame.width,
+                               height: scrollFrame.height)
+            
+            resizableImageView.image = image.rotateImageByOrientation()
+            resizableImageView.frame = frame
+            resizableImageView.alpha = 1.0
+            resizableImageView.clipsToBounds = true
+            
+            if let view = senderViewForAnimation , view.layer.cornerRadius != 0 {
+                let duration = (animationDuration * Double(animationDamping))
+                resizableImageView.layer.masksToBounds = true
+                resizableImageView.addCornerRadiusAnimation(0, to: view.layer.cornerRadius, duration: duration)
+            }
         }
-        
+
         dismissAnimation(browser)
     }
 }
