@@ -11,8 +11,8 @@ ISPhotoBrowser is a new implementation based on [IDMPhotoBrowser](https://github
 - [x] Photos can be zoomed and panned
 - [x] Minimalistic Facebook-like interface, swipe up/down to dismiss
 - [x] Uses Kingfisher for image loading
-- [ ] Landscape handling
-- [ ] Highly customized
+- [x] Landscape handling
+- [x] Highly customized
 - [ ] Long pictures optimization
 - [ ] Image progress shown
 - [ ] GIF support
@@ -65,6 +65,35 @@ let photoBrowser = ISPhotoBrowser(photos: photos, originImage: imageView.image!,
 ```Swift
 self.present(photoBrowser, animated: true, completion: nil)
 ```
+
+## Customize
+
+
+```Swift
+// initial page
+var initialPageIndex: Int = 0
+
+// get current page index
+var currentPageIndex: Int = 0
+
+// background color
+var backgroundColor: UIColor = .black
+
+// single tap dismiss
+var enableSingleTapDismiss: Bool = true
+```
+
+delegate
+
+```Swift
+func didShowPhotoAtIndex(_ index: Int)
+func willDismissAtPageIndex(_ index: Int)
+func didDismissAtPageIndex(_ index: Int)
+func didScrollToIndex(_ index: Int)
+func viewForPhoto(_ browser: ISPhotoBrowser, index: Int) -> UIView?
+```
+
+For more, please see the example project
 
 ## Author
 
