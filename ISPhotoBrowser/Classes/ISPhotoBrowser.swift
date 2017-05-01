@@ -8,30 +8,38 @@
 
 import UIKit
 
-let ISPhotoCellMargin = 20.0
+internal let ISPhotoCellMargin = 20.0
 
-public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+open class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    lazy var photoCollectionView: UICollectionView = {
+    private lazy var photoCollectionView: UICollectionView = {
         return UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: ISCollectionViewLayout())
     }()
 
     // data
-    var photos: [ISPhotoProtocol] = []
+    internal var photos: [ISPhotoProtocol] = []
     
     // delegate
     fileprivate let animator = ISAnimator()
     open weak var delegate: ISPhotoBrowserDelegate?
     
-    public var initialPageIndex: Int = 0
-    public var currentPageIndex: Int = 0
-    
-    var backgroundView: UIView!
+    internal var backgroundView: UIView!
     fileprivate var panGesture: UIPanGestureRecognizer!
     
     // pangesture property
     fileprivate var firstX: CGFloat = 0.0
     fileprivate var firstY: CGFloat = 0.0
+    
+    // customize
+    public var initialPageIndex: Int = 0
+    public var currentPageIndex: Int = 0
+    public var backgroundColor: UIColor = UIColor.black {
+        didSet{
+            self.backgroundView?.backgroundColor = backgroundColor
+        }
+    }
+    public var enableSingleTapDismiss: Bool = true
+    
     
     public convenience init(photos: [ISPhotoProtocol]) {
         self.init(nibName: nil, bundle: nil)
@@ -54,7 +62,7 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
         setup()
     }
     
-    public override func didReceiveMemoryWarning() {
+    open override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
         photos.forEach { (photo) in
@@ -63,7 +71,7 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
     }
     
     deinit {
-        print("ISPhotoBrowser deinit...")
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.ISPhotoSingleTapAction, object: nil)
     }
     
     func setup() {
@@ -72,9 +80,9 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
         modalTransitionStyle = .crossDissolve
     }
     
-    override public func viewDidLoad() {
+    open override func viewDidLoad() {
         
-        view.backgroundColor = .black
+        view.backgroundColor = self.backgroundColor
         
         // Collection View
         if let collectionViewLayout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -85,8 +93,8 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
         }
 
         photoCollectionView.isPagingEnabled = true
-        photoCollectionView.showsVerticalScrollIndicator = true
-        photoCollectionView.showsHorizontalScrollIndicator = true
+        photoCollectionView.showsVerticalScrollIndicator = false
+        photoCollectionView.showsHorizontalScrollIndicator = false
         photoCollectionView.register(ISPhotoCell.self, forCellWithReuseIdentifier: "ISPhotoCell")
         photoCollectionView.backgroundColor = .clear
         photoCollectionView.dataSource = self
@@ -100,7 +108,7 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
         
         // Backgorund view
         backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        backgroundView.backgroundColor = .black
+        backgroundView.backgroundColor = self.backgroundColor
         backgroundView.alpha = 0.0
         self.view.addSubview(backgroundView)
         
@@ -116,12 +124,17 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
         panGesture.minimumNumberOfTouches = 1
         panGesture.maximumNumberOfTouches = 1
         view.addGestureRecognizer(panGesture)
-//
-//        // present animation
+
+        // present animation
         animator.willPresent(self)
+        
+        delegate?.didShowPhotoAtIndex?(currentPageIndex)
+        
+        // Notification
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSingleTap(_:)), name: NSNotification.Name.ISPhotoSingleTapAction, object: nil)
     }
 
-    public override func viewDidLayoutSubviews() {
+    open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         for cell in photoCollectionView.visibleCells {
@@ -131,28 +144,30 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         guard let flowLayout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
             return
         }
         
         // force layout for update item size
         flowLayout.invalidateLayout()
+        
+        delegate?.didShowPhotoAtIndex?(currentPageIndex)
     }
     
     // MARK: - UICollectionViewDataSource
     
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
     
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ISPhotoCell", for: indexPath) as! ISPhotoCell
         cell.photo = photos[indexPath.row]
         return cell
     }
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width + CGFloat(ISPhotoCellMargin), height: view.frame.height)
     }
     
@@ -175,12 +190,9 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
         UIGraphicsEndImageContext()
         return result
     }
-    open func prepareForClosePhotoBrowser() {
-        NSObject.cancelPreviousPerformRequests(withTarget: self)
-    }
     
     open func dismissPhotoBrowser(animated: Bool, completion: ((Void) -> Void)? = nil) {
-        prepareForClosePhotoBrowser()
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
         
         if !animated {
             modalTransitionStyle = .crossDissolve
@@ -188,10 +200,12 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
         
         dismiss(animated: !animated) {
             completion?()
+            self.delegate?.didDismissAtPageIndex?(self.currentPageIndex)
         }
     }
     
     open func determineAndClose() {
+        delegate?.willDismissAtPageIndex?(currentPageIndex)
         animator.willDismiss(self)
     }
 
@@ -229,9 +243,7 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
             ? zoomingScrollView.center.y - viewHalfHeight
             : -(zoomingScrollView.center.y - viewHalfHeight)) / viewHalfHeight
         
-        print("offset: \(offset)")
-        
-        view.backgroundColor = UIColor.black.withAlphaComponent(offset)
+        view.backgroundColor = self.backgroundColor.withAlphaComponent(offset)
         
         // gesture end
         if sender.state == .ended {
@@ -239,7 +251,7 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
             if zoomingScrollView.center.y > viewHalfHeight + minOffset
                 || zoomingScrollView.center.y < viewHalfHeight - minOffset {
                 
-                backgroundView.backgroundColor = view.backgroundColor
+                backgroundView.backgroundColor = self.backgroundColor
                 determineAndClose()
                 
             } else {
@@ -255,13 +267,18 @@ public class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UICol
                 UIView.beginAnimations(nil, context: nil)
                 UIView.setAnimationDuration(animationDuration)
                 UIView.setAnimationCurve(UIViewAnimationCurve.easeIn)
-                view.backgroundColor = .black
+                view.backgroundColor = self.backgroundColor
                 zoomingScrollView.center = CGPoint(x: finalX, y: finalY)
                 UIView.commitAnimations()
             }
         }
     }
 
+    func handleSingleTap(_ recognizer: UITapGestureRecognizer) {
+        if self.enableSingleTapDismiss {
+            determineAndClose()
+        }
+    }
 }
 
 // MARK: -  UICollectionViewDelegate<UIScrollView> Delegate
@@ -270,14 +287,18 @@ extension ISPhotoBrowser: UICollectionViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         // Calculate current page
+        let previousCurrentPage = currentPageIndex
         let visibleBounds = scrollView.bounds
         currentPageIndex = min(max(Int(floor(visibleBounds.midX / visibleBounds.width)), 0), photos.count - 1)
-        print("scrollViewDidScroll - currentPageIndex: \(currentPageIndex)")
+        
+        if currentPageIndex != previousCurrentPage {
+            delegate?.didShowPhotoAtIndex?(currentPageIndex)
+        }
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentIndex = scrollView.contentOffset.x / scrollView.frame.size.width
-        print("scrollViewDidEndDecelerating currentIndex: \(currentIndex)")
+        delegate?.didScrollToIndex?(Int(currentIndex))
     }
 }
 

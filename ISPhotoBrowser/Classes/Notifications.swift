@@ -11,4 +11,5 @@ import Foundation
 
 extension Notification.Name {
     static let ISPhotoLoadingDidEnd = Notification.Name("ISPhotoLoadingDidEnd")
+    static let ISPhotoSingleTapAction = Notification.Name("ISPhotoSingleTapAction")
 }

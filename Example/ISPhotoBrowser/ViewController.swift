@@ -41,9 +41,6 @@ class ViewController: UITableViewController {
         
         if let imageView = cell.viewWithTag(101) as? UIImageView {
             imageView.kf.setImage(with: photos[indexPath.row].photoURL)
-            
-            imageView.layer.cornerRadius = 100.0
-            imageView.clipsToBounds = true
         }
         
         return cell
@@ -55,10 +52,51 @@ class ViewController: UITableViewController {
 
         if let cell = tableView.cellForRow(at: indexPath), let imageView = cell.viewWithTag(101) as? UIImageView {
             let photoBrowser = ISPhotoBrowser(photos: photos, originImage: imageView.image!, animatedFromView: imageView)
+            
+            photoBrowser.delegate = self
+            
+            // === Customize ===
+            
+            // initial page
             photoBrowser.initialPageIndex = indexPath.row
+            
+            // background color
+            photoBrowser.backgroundColor = .gray
+            
+            // single tap dismiss
+            photoBrowser.enableSingleTapDismiss = true
+            
+            // === Customize ===
+            
             self.present(photoBrowser, animated: true, completion: nil)
         }
 
     }
 }
 
+extension ViewController: ISPhotoBrowserDelegate {
+    func didShowPhotoAtIndex(_ index: Int) {
+        print("ISPhotoBrowser didShowPhotoAtIndex:  \(index)")
+        
+        tableView.visibleCells.forEach({$0.isHidden = false})
+        tableView.cellForRow(at: IndexPath(row: index, section: 0))?.isHidden = true
+    }
+    
+    func willDismissAtPageIndex(_ index: Int) {
+        print("ISPhotoBrowser willDismissAtPageIndex:  \(index)")
+    }
+    
+    func didDismissAtPageIndex(_ index: Int) {
+        print("ISPhotoBrowser didDismissAtPageIndex:  \(index)")
+        
+        tableView.cellForRow(at: IndexPath(row: index, section: 0))?.isHidden = false
+    }
+    
+    func didScrollToIndex(_ index: Int) {
+        print("ISPhotoBrowser didScrollToIndex:  \(index)")
+    }
+    
+    func viewForPhoto(_ browser: ISPhotoBrowser, index: Int) -> UIView? {
+        return tableView.cellForRow(at: IndexPath(row: index, section: 0))?.viewWithTag(101)
+    }
+}

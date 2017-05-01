@@ -22,7 +22,6 @@ open class ISZoomingScrollView: UIScrollView {
     }
     
     fileprivate(set) var photoImageView: UIImageView!
-    fileprivate weak var photoBrowser: ISPhotoBrowser?
     
     var indicatorView: UIActivityIndicatorView!
     
@@ -36,17 +35,6 @@ open class ISZoomingScrollView: UIScrollView {
         setup()
     }
     
-    convenience init(frame: CGRect, browser: ISPhotoBrowser) {
-        self.init(frame: frame)
-        photoBrowser = browser
-        setup()
-    }
-    
-    deinit {
-        print("ISZoomingScrollView deinit...")
-        photoBrowser = nil
-    }
-    
     func setup() {
         // image view
         photoImageView = UIImageView(frame: frame)
@@ -54,9 +42,15 @@ open class ISZoomingScrollView: UIScrollView {
         photoImageView.backgroundColor = .clear
         addSubview(photoImageView)
         
-        let photoImageViewDoubleTap = UITapGestureRecognizer(target: self, action: #selector(handlePhotoImageViewDoubleTap(_:)))
-        photoImageViewDoubleTap.numberOfTapsRequired = 2
-        addGestureRecognizer(photoImageViewDoubleTap)
+        // gesture recognizer
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+        doubleTap.numberOfTapsRequired = 2
+        addGestureRecognizer(doubleTap)
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap(_:)))
+        singleTap.numberOfTapsRequired = 1
+        singleTap.require(toFail: doubleTap)
+        addGestureRecognizer(singleTap)
         
         // indicator
         indicatorView = UIActivityIndicatorView(frame: frame)
@@ -199,12 +193,13 @@ open class ISZoomingScrollView: UIScrollView {
     }
     
     // MARK: - handle tap
-    open func handlePhotoImageViewDoubleTap(_ recognizer: UITapGestureRecognizer) {
+    
+    func handleSingleTap(_ recognizer: UITapGestureRecognizer) {
+        NotificationCenter.default.post(name: NSNotification.Name.ISPhotoSingleTapAction, object: nil)
+    }
+    
+    open func handleDoubleTap(_ recognizer: UITapGestureRecognizer) {
         let touchPoint = recognizer.location(in: photoImageView)
-        
-        if let photoBrowser = photoBrowser {
-            NSObject.cancelPreviousPerformRequests(withTarget: photoBrowser)
-        }
         
         if zoomScale > minimumZoomScale {
             // zoom out
