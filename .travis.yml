@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode8.3
 
--before_install:
+before_install:
  - |
     gem install xcpretty -N --no-ri --no-rdoc
     gem install cocoapods
