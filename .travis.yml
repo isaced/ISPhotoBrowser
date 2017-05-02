@@ -2,6 +2,11 @@ language: objective-c
 osx_image: xcode8.3
 podfile: Example/Podfile
 
+before_install:
+ - |
+    gem install xcpretty -N --no-ri --no-rdoc
+    gem install cocoapods
+    pod install --project-directory=Example
 script:
  - |
     set -o pipefail
