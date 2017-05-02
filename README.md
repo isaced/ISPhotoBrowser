@@ -1,6 +1,6 @@
 # ISPhotoBrowser [![CI Status](http://img.shields.io/travis/isaced/ISPhotoBrowser.svg?style=flat)](https://travis-ci.org/isaced/ISPhotoBrowser) [![Version](https://img.shields.io/cocoapods/v/ISPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/ISPhotoBrowser)
 
-ISPhotoBrowser 是一个新的照片浏览器基于 [IDMPhotoBrowser](https://github.com/thiagoperes/IDMPhotoBrowser), [MWPhotoBrowser](https://github.com/mwaterfall/MWPhotoBrowser), [SKPhotoBrowser](https://github.com/suzuki-0000/SKPhotoBrowser) 制作，感谢前辈们的积淀，内部重新采用了 UICollectionView 构建，并且优化了其他一些使用，让源码逻辑更清晰，使用更方便，并计划长期维护以及增加更多特性。 [English](https://github.com/isaced/ISPhotoBrowser/blob/master/README_EN.md)
+ISPhotoBrowser 是一个新的照片大图浏览器基于 [IDMPhotoBrowser](https://github.com/thiagoperes/IDMPhotoBrowser), [MWPhotoBrowser](https://github.com/mwaterfall/MWPhotoBrowser), [SKPhotoBrowser](https://github.com/suzuki-0000/SKPhotoBrowser) 实现，感谢前辈们的积淀，内部重新采用了 UICollectionView 构建，并且优化了其他一些使用，让源码逻辑更清晰，使用更方便，并计划长期维护以及增加更多特性。 [English](https://github.com/isaced/ISPhotoBrowser/blob/master/README_EN.md)
 
 <img width="300" src="http://ww2.sinaimg.cn/large/006tKfTcgy1ff27gyoly7j30ku112x6k.jpg" />
 
@@ -24,11 +24,11 @@ ISPhotoBrowser 是一个新的照片浏览器基于 [IDMPhotoBrowser](https://gi
 
 ## 示例
 
-clone 这个项目，前先在 Example 文件夹运行 `pod install`
+Clone 这个项目，打开前先在 Example 文件夹执行 `pod install`
 
 ## 安装
 
-ISPhotoBrowser 已加入 [CocoaPods](http://cocoapods.org) 豪华午餐. 在 Podfile 文件中添加如下代码即可引入到你的项目:
+ISPhotoBrowser 现已加入 [CocoaPods](http://cocoapods.org) 豪华午餐，请尽情享用：
 
 ```ruby
 pod "ISPhotoBrowser"
@@ -38,7 +38,7 @@ pod "ISPhotoBrowser"
 
 通过以下代码片段示例来了解如何使用
 
-1. 生成一个 ISPhoto 对象的照片数组:
+1. 生成一组 ISPhoto:
 
 ```Swift
 // URLs array
@@ -53,13 +53,13 @@ let photos: [ISPhoto] = urls.map({ (url) -> ISPhoto in
     })
 ```
 
-2. 创建 PhotoBrowser 示例:
+2. 创建 PhotoBrowser:
 
 ```
 let photoBrowser = ISPhotoBrowser(photos: photos, originImage: imageView.image!, animatedFromView: imageView)
 ```
 
-3. 弹出照片浏览器:
+3. 弹出:
 
 ```Swift
 self.present(photoBrowser, animated: true, completion: nil)
@@ -109,6 +109,8 @@ func viewForPhoto(_ browser: ISPhotoBrowser, index: Int) -> UIView?
 如果你想实现类似微信点开大图隐藏原 view 并在退出大图浏览器后飞入的效果，可以通过以上代理中的 `didShowPhotoAtIndex` 和 `didDismissAtPageIndex` 来控制原 view 的隐藏和显示达到该效果，可以参照 Demo 的实现。
 
 #### 自定义 ISPhoto
+
+通过自定义 ISPhoto 可以轻松扩展你现有的模型，并且定制其加载逻辑，比如你不想使用内置的 Kingfisher 下载和缓存，可以通过自定义 ISPhoto 来实现特定的下载和缓存逻辑。
 
 ISPhoto 其实也是遵循了 ISPhotoProtocol 这个协议来告知 ISPhotoBrowser 如何进行加载图片并回调，你完全可以不使用内置的 ISPhoto 而扩展自己的模型支持 ISPhotoBrowser 加载，同样只需要实现 ISPhotoProtocol 协议就好了，具体可参考 [ISPhoto](https://github.com/isaced/ISPhotoBrowser/blob/master/ISPhotoBrowser/Classes/ISPhoto.swift) 源码。
 
