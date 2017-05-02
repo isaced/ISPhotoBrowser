@@ -1,6 +1,6 @@
 # ISPhotoBrowser [![CI Status](http://img.shields.io/travis/isaced/ISPhotoBrowser.svg?style=flat)](https://travis-ci.org/isaced/ISPhotoBrowser) [![Version](https://img.shields.io/cocoapods/v/ISPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/ISPhotoBrowser)
 
-ISPhotoBrowser 是一个新的照片浏览器基于 [IDMPhotoBrowser](https://github.com/thiagoperes/IDMPhotoBrowser), [MWPhotoBrowser](https://github.com/mwaterfall/MWPhotoBrowser), [SKPhotoBrowser](https://github.com/suzuki-0000/SKPhotoBrowser) 制作，感谢前辈们的积淀，内部重新采用了 UICollectionView 构建，并且优化了其他一些使用，让源码逻辑更清晰，使用更方便，并计划长期维护以及增加更多特性。
+ISPhotoBrowser 是一个新的照片浏览器基于 [IDMPhotoBrowser](https://github.com/thiagoperes/IDMPhotoBrowser), [MWPhotoBrowser](https://github.com/mwaterfall/MWPhotoBrowser), [SKPhotoBrowser](https://github.com/suzuki-0000/SKPhotoBrowser) 制作，感谢前辈们的积淀，内部重新采用了 UICollectionView 构建，并且优化了其他一些使用，让源码逻辑更清晰，使用更方便，并计划长期维护以及增加更多特性。 [English](https://github.com/isaced/ISPhotoBrowser/blob/master/README_EN.md)
 
 <img width="300" src="http://ww2.sinaimg.cn/large/006tKfTcgy1ff27gyoly7j30ku112x6k.jpg" />
 
