@@ -1,4 +1,10 @@
 language: objective-c
 osx_image: xcode8.3
-xcode_workspace: Example/ISPhotoBrowser.xcworkspace
-xcode_scheme: ISPhotoBrowser-Example
+
+-before_install:
+ - |
+    gem install xcpretty -N --no-ri --no-rdoc
+script:
+ - |
+    set -o pipefail
+    xcodebuild clean build -workspace Example/ISPhotoBrowser.xcworkspace -scheme ISPhotoBrowser-Example -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' | xcpretty
