@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ISPhotoBrowser'
-  s.version          = '0.1.0'
+  s.version          = '0.0.1'
   s.summary          = 'A simple iOS photo browser written in Swift.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Photo browser for iOS.
+ISPhotoBrowser is a new photo browser based on IDMPhotoBrowser, MWPhotoBrowser, SKPhotoBrowser production, thanks to the predecessors of the accumulation,
+the internal use of the UICollectionView build, and optimize the use of some other, so that the source code is more clear, more convenient to use, 
+and long-term maintenance and Add more features.
                        DESC
 
   s.homepage         = 'https://github.com/isaced/ISPhotoBrowser'
