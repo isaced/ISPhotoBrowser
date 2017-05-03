@@ -19,18 +19,36 @@ class ViewController: UITableViewController {
         
         tableView.rowHeight = 200
 
-//        KingfisherManager.shared.cache.clearMemoryCache()
 //        KingfisherManager.shared.cache.clearDiskCache()
         
+//        loadPhotosFromLocal()
+        loadPhotosFromURL()
+    }
+    
+    func loadPhotosFromLocal() {
+        // init with local image
+        self.photos = (1...6).map { (index) -> ISPhoto in
+            let filePath = Bundle.main.path(forResource: "\(index)", ofType: "jpg")
+            let image = UIImage(contentsOfFile: filePath!)
+            let photo = ISPhoto(image: image!)
+            return photo
+        }
+    }
+    
+    func loadPhotosFromURL() {
+        // init with url
         let urls = ["https://farm4.static.flickr.com/3567/3523321514_371d9ac42f_b.jpg",
                     "https://farm4.static.flickr.com/3629/3339128908_7aecabc34b_b.jpg",
                     "https://farm4.static.flickr.com/3364/3338617424_7ff836d55f_b.jpg",
-                    "https://farm4.static.flickr.com/3590/3329114220_5fbc5bc92b_b.jpg"]
-        let photos: [ISPhoto] = urls.map({ (url) -> ISPhoto in
+                    "https://farm4.static.flickr.com/3590/3329114220_5fbc5bc92b_b.jpg",
+                    "https://farm4.static.flickr.com/3224/3523355044_6551552f93_b.jpg",
+                    "https://farm4.static.flickr.com/3194/2987143528_2ee4a9e3cc_b.jpg"]
+        self.photos = urls.map({ (url) -> ISPhoto in
             return ISPhoto(url: URL(string: url)!)
         })
-        self.photos = photos
     }
+    
+    // MARK: -
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photos.count
@@ -40,7 +58,14 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         if let imageView = cell.viewWithTag(101) as? UIImageView {
-            imageView.kf.setImage(with: photos[indexPath.row].photoURL)
+            let photo = photos[indexPath.row]
+            if (photo.underlyingImage != nil) {
+                imageView.image = photo.underlyingImage
+            }else if (photo.photoURL != nil){
+                imageView.kf.setImage(with: photo.photoURL)
+            }else{
+                imageView.image = nil
+            }
         }
         
         return cell

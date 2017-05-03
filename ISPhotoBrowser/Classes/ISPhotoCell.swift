@@ -21,8 +21,6 @@ class ISPhotoCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         config()
-        
-        print("ISPhotoCell init...")
     }
     
     required init?(coder aDecoder: NSCoder) {
