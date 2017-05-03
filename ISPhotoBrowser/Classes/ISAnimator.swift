@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc public protocol ISPhotoBrowserAnimatorDelegate {
+@objc protocol ISPhotoBrowserAnimatorDelegate {
     func willPresent(_ browser: ISPhotoBrowser)
     func willDismiss(_ browser: ISPhotoBrowser)
 }

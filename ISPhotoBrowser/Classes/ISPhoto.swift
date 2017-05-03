@@ -15,12 +15,16 @@ import Kingfisher
 /// conforms to ISPhotoProtocol
 open class ISPhoto: ISPhotoProtocol {
     public var underlyingImage: UIImage?
+    
+    /// photo url, if need load image from network
     public var photoURL: URL?
     
+    /// init with iamge
     public init(image: UIImage) {
         self.underlyingImage = image
     }
     
+    /// init with url
     public init(url: URL) {
         self.photoURL = url
     }

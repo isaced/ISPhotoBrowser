@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ISZoomingScrollView: UIScrollView {
+class ISZoomingScrollView: UIScrollView {
     var photo: ISPhotoProtocol! {
         didSet {
             photoImageView.image = nil

@@ -22,7 +22,7 @@ public protocol ISPhotoProtocol {
     /// already decompressed) and needs to be loaded from a source (cache, file, web, etc)
     /// IMPORTANT: You should *NOT* use this method to initiate
     /// fetching of images from any external of source. That should be handled
-    /// in -loadUnderlyingImageAndNotify: which may be called by the photo browser if this
+    /// in loadUnderlyingImageWithCallback() which may be called by the photo browser if this
     /// methods returns nil.
     var underlyingImage: UIImage? { get }
     
