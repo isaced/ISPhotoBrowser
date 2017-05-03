@@ -188,9 +188,15 @@ open class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UIColle
         return photos[index]
     }
     
-    func scrollToPage(pageIndex: Int, animated: Bool) {
-        let indexPath = IndexPath(item: pageIndex, section: 0)
-        self.photoCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
+    ///  To turn the page
+    ///
+    ///  - parameter pageIndex: The page number to go
+    ///  - parameter animated: Whether to scroll past
+    public func scrollToPage(pageIndex: Int, animated: Bool) {
+        if pageIndex != currentPageIndex {
+            let indexPath = IndexPath(item: pageIndex, section: 0)
+            self.photoCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
+        }
     }
     
     // MARK: -
