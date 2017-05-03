@@ -30,16 +30,27 @@ open class ISPhotoBrowser: UIViewController, UICollectionViewDataSource, UIColle
     fileprivate var firstX: CGFloat = 0.0
     fileprivate var firstY: CGFloat = 0.0
     
-    // customize
+    // === Customize ===
+    
+    /// Set the initial page
     public var initialPageIndex: Int = 0
-    public var currentPageIndex: Int = 0
+    
+    /// Get the current page number of the photo browser
+    ///
+    /// If you want to change current page, pleasecall scrollToPage()
+    public fileprivate(set) var currentPageIndex: Int = 0
+    
+    /// Set the background color of the photo browser
     public var backgroundColor: UIColor = UIColor.black {
         didSet{
             self.backgroundView?.backgroundColor = backgroundColor
         }
     }
+    
+    /// Whether to enable click disappears
     public var enableSingleTapDismiss: Bool = true
     
+    // === Customize ===
     
     public convenience init(photos: [ISPhotoProtocol]) {
         self.init(nibName: nil, bundle: nil)
