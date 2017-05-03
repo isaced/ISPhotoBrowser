@@ -24,16 +24,7 @@ open class ISPhoto: ISPhotoProtocol {
     public init(url: URL) {
         self.photoURL = url
     }
-    
-    public func loadUnderlyingImageAndNotify() {
-        assert(Thread.isMainThread, "This method must be called on the main thread.")
-        if underlyingImage == nil {
-            performLoadUnderlyingImageAndNotify()
-        }else{
-            loadUnderlyingImageComplete()
-        }
-    }
-    
+
     public func loadUnderlyingImageWithCallback(callback: @escaping (() -> Void)) {
         guard let photoURL = photoURL else {
             callback()
@@ -42,25 +33,8 @@ open class ISPhoto: ISPhotoProtocol {
 
         KingfisherManager.shared.retrieveImage(with: photoURL, options: nil, progressBlock: nil) { [weak self] (image, error, cacheType, url) in
             self?.underlyingImage = image
-            self?.loadUnderlyingImageComplete()
             callback()
         }
-    }
-    
-    public func performLoadUnderlyingImageAndNotify() {
-        guard let photoURL = photoURL else { return }
-        
-        print("retrieveImage: \(photoURL.absoluteString)")
-        KingfisherManager.shared.retrieveImage(with: photoURL, options: nil, progressBlock: nil) { [weak self] (image, error, cacheType, url) in
-            self?.underlyingImage = image
-            self?.loadUnderlyingImageComplete()
-            
-            print("retrieveImage complate: \(photoURL.absoluteString)")
-        }
-    }
-    
-    func loadUnderlyingImageComplete() {
-        NotificationCenter.default.post(Notification(name: .ISPhotoLoadingDidEnd))
     }
     
     open func unloadUnderlyingImage() {

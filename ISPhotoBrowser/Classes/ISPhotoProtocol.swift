@@ -26,20 +26,12 @@ public protocol ISPhotoProtocol {
     /// methods returns nil.
     var underlyingImage: UIImage? { get }
     
-    /// Called when the browser has determined the underlying images is not
-    /// already loaded into memory but needs it.
-    func loadUnderlyingImageAndNotify()
-    
-    func loadUnderlyingImageWithCallback(callback: @escaping (()->Void))
-    
     /// Fetch the image data from a source and notify when complete.
     /// You must load the image asyncronously (and decompress it for better performance).
     /// It is recommended that you use Kingfisher to perform the decompression.
     /// See ISPhoto object for an example implementation.
-    /// When the underlying UIImage is loaded (or failed to load) you should post the following
-    /// notification:
-    ///  NotificationCenter.default.post(Notification(name: .ISPhotoLoadingDidEnd))
-    func performLoadUnderlyingImageAndNotify()
+    /// When the underlying UIImage is loaded (or failed to load) you should callback
+    func loadUnderlyingImageWithCallback(callback: @escaping (()->Void))
     
     /// This is called when the photo browser has determined the photo data
     /// is no longer needed or there are low memory conditions
